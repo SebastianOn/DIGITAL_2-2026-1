@@ -6,4 +6,4 @@ https://www.seeedstudio.com/blog/2022/09/02/i2c-communication-protocol-and-how-i
 
 | Recurso | Descripción | Link |
 | :--- | :--- | :--- |
-| **🌐 Web** | Sitio oficial del proyecto | [Visitar](https://www.seeedstudio.com/blog/2022/09/02/i2c-communication-protocol-and-how-it-works/) |
+| **🌐 Web** | Protocolo I2C DATOS | [Visitar](https://www.seeedstudio.com/blog/2022/09/02/i2c-communication-protocol-and-how-it-works/) |
