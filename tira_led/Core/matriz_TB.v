@@ -68,13 +68,13 @@ module matriz_tb;
         $finish;
     end
 
-    // (Opcional) Bloque para monitorear señales en la consola del simulador
+    //Bloque para monitorear señales en la consola del simulador
     initial begin
         $monitor("Tiempo=%0t | RESET=%b | INIT=%b | DATA=%h | DONE=%b | LED_OUT=%b", 
                  $time, RESET, INIT, DATA, DONE, LED_OUT);
     end
 
-    // (Opcional) Generacion de archivo VCD para ver las formas de onda en GTKWave o similar
+    //Generacion de archivo VCD
     initial begin
         $dumpfile("matriz_tb.vcd");
         $dumpvars(0, matriz_tb);
