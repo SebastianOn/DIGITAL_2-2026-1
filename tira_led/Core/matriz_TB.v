@@ -6,8 +6,6 @@ module matriz_tb;
     reg RESET;
     reg INIT;
     reg [23:0] DATA;
-
-    // Salidas del DUT declaradas como wire
     wire LED_OUT;
     wire DONE;
 
@@ -25,50 +23,44 @@ module matriz_tb;
     always #20 CLK = ~CLK;
 
     initial begin
-        // 1. Inicializacion de señales
         CLK = 0;
         RESET = 1;
         INIT = 0;
         DATA = 24'd0;
 
-        // Esperar unos ciclos y soltar el reset
+        // Espera un momento
        #100;
         RESET = 0;
         #40;
 
-        // 2. Primera prueba: Enviar un patron mixto (0xAA55F0)
-        // 0xAA55F0 = 10101010_01010101_11110000 en binario
+        // (0xAA55F0) = 10101010_01010101_11110000 en binario
         DATA = 24'hAA55F0;
         
-        // Dar el pulso de INIT por un ciclo de reloj
+        // init
         INIT = 1;
         #40;
         INIT = 0;
-
-        // Esperar hasta que el modulo indique que termino
         wait (DONE == 1'b1);
         
-        // Dar un pequeño margen de tiempo antes de la siguiente trama
+        // espera para el siguiente dato
         #200;
 
-        // 3. Segunda prueba: (verde puro 0x00FF00)
+        // (verde puro 0x00FF00)
         DATA = 24'h00FF00;
         
         // Pulso de INIT
         INIT = 1;
         #40;
         INIT = 0;
-
-        // Esperar a que termine
+        
         wait (DONE == 1'b1);
         #200;
 
-        // Finalizar la simulacion
+        // mensaje final
         $display("Simulacion terminada correctamente.");
         $finish;
     end
-
-    //Bloque para monitorear señales en la consola del simulador
+    
     initial begin
         $monitor("Tiempo=%0t | RESET=%b | INIT=%b | DATA=%h | DONE=%b | LED_OUT=%b", 
                  $time, RESET, INIT, DATA, DONE, LED_OUT);
