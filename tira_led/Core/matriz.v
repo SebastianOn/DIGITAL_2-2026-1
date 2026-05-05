@@ -8,7 +8,7 @@ module controlador_led (
     output reg DONE         
 );
 
-    // Tiempos definidos en el diagrama (en ciclos de reloj)
+    // Tiempos en ciclos de reloj
     localparam T0H = 10;
     localparam T0L = 21;
     localparam T1H = 20;
