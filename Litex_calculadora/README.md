@@ -39,7 +39,7 @@ Al trabajar cada operación por separado, es más fácil revisar el funcionamien
 Antes de implementar el diseño en la FPGA, se realizaron simulaciones para comprobar que cada módulo funcionara correctamente.
 
 Durante estas pruebas se verificó que las operaciones entregaran los resultados esperados y que no existieran errores en la comunicación entre los módulos.
-
+![Sim_Div](jhohan/Imágenes/Simulacion_div.png)
 ---
 
 # Módulos principales
