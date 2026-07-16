@@ -31,10 +31,6 @@ top
 
 ## Formato del .hex
 
-64 lineas, una por LED (LED 0 = primer LED de la cadena). Cada linea es
-un valor de 24 bits en hexadecimal con formato **GRB**: `GGRRBB`.
-Ejemplo: verde puro = `ff0000`, rojo puro = `00ff00`, azul puro = `0000ff`.
-
 Para generar el .hex desde una imagen:
 ```
 python3 img/png2hex.py mi_imagen.png img/image.hex            # filas normales
