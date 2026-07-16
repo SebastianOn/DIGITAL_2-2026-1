@@ -36,6 +36,7 @@ Permite comprobar que el módulo serializador transmite correctamente los 24 bit
 
 ### tb_matrix
 Banco de pruebas del sistema completo. Verifica el funcionamiento del controlador de la matriz y la correcta transmisión de la información almacenada en la memoria.
+<img width="1919" height="1157" alt="simulacion_timmer" src="https://github.com/user-attachments/assets/552d886d-aac2-4213-ae9f-95e8a4be7dbf" />
 
 ---
 
