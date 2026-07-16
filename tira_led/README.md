@@ -54,3 +54,5 @@ Archivo de configuración generado durante el flujo de implementación y program
 
 ### Makefile
 Contiene los comandos necesarios para automatizar la simulación, síntesis, implementación y programación de la FPGA, facilitando el desarrollo y las pruebas del proyecto.
+<img width="1536" height="1536" alt="Prueba_ws2812" src="https://github.com/user-attachments/assets/5c913a4e-368b-4057-9d86-3dd34bad96c3" />
+
