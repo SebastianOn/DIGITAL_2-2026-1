@@ -31,13 +31,8 @@ top
 
 ## Formato del .hex
 
-64 lineas, una por LED (LED 0 = primer LED de la cadena). Cada linea es
-un valor de 24 bits en hexadecimal con formato **GRB**: `GGRRBB`.
-Ejemplo: verde puro = `ff0000`, rojo puro = `00ff00`, azul puro = `0000ff`.
-
 Para generar el .hex desde una imagen:
 ```
-pip install pillow
 python3 img/png2hex.py mi_imagen.png img/image.hex            # filas normales
 python3 img/png2hex.py mi_imagen.png img/image.hex --serpentine  # zig-zag
 ```
@@ -71,21 +66,3 @@ Requiere yosys, nextpnr-ecp5, prjtrellis (ecppack) y openFPGALoader:
 make bit     # genera top.bit
 make flash   # carga a la Colorlight i9
 ```
-
-## Conexion fisica
-
-- `clk_25mhz` -> oscilador de la placa (pin P3).
-- `ws2812_din` -> DIN de la matriz (pin K18 por defecto; **ajusta el .lpf**
-  segun tu placa de expansion).
-- GND comun entre la i9 y la matriz.
-- Alimenta la matriz con 5 V externos (64 LEDs a blanco pueden superar 3 A).
-- El DIN suele aceptar 3.3 V, pero un level shifter (74HCT125) es lo ideal.
-
-## Nota de diseno
-
-`bit_done`/`rst_done` del timer son **combinacionales** (se activan en el
-ultimo ciclo del periodo) para que la FSM del serializador conmute en el
-mismo flanco en que el contador da la vuelta. Si fueran registrados, se
-generaria un pulso alto espurio de 1-2 ciclos entre pixeles que corrompe
-la trama: este bug fue detectado y corregido gracias al testbench de
-integracion de la matriz.
