@@ -12,3 +12,5 @@ Contiene las descripciones de hardware en Verilog que conforman los bloques fund
 * *i2c_sim.vcd*: Archivo de volcado de cambios de variables (Value Change Dump) generado tras ejecutar la simulación del testbench. Permite la visualización de los cronogramas y diagramas de tiempos de las señales SCL y SDA en herramientas externas como GTKWave.
 * *Diagrama I2C actu.drawio.png*: Diagrama de bloques que ilustra la arquitectura de la conexión física y lógica entre los dispositivos, detallando la configuración de las líneas de colector abierto y las resistencias de pull-up indispensables para el protocolo.
 * *12-Febrero_apuntes.pdf*: Documentación teórica de soporte que detalla las especificaciones de temporización, estados del protocolo y requerimientos de diseño establecidos durante las sesiones de desarrollo.
+* <img width="1919" height="1149" alt="simulacion_i2c" src="https://github.com/user-attachments/assets/cc7e1640-75ba-4bb7-9c6e-85efa40ef605" />
+
