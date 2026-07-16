@@ -1,6 +1,6 @@
 ## Estructura del Repositorio
 
-### /Codigo
+### Codigo
 Contiene las descripciones de hardware en Verilog que conforman los bloques fundamentales del bus de comunicación:
 
 * *i2c_master.v*: Módulo principal encargado de controlar el bus. Genera la señal de reloj SCL y coordina los tiempos para las condiciones de Inicio (Start), Parada (Stop), direccionamiento de 7 bits y transferencia de datos a través de la línea SDA. Implementado mediante una máquina de estados finitos (FSM).
