@@ -39,7 +39,12 @@ Al trabajar cada operación por separado, es más fácil revisar el funcionamien
 Antes de implementar el diseño en la FPGA, se realizaron simulaciones para comprobar que cada módulo funcionara correctamente.
 
 Durante estas pruebas se verificó que las operaciones entregaran los resultados esperados y que no existieran errores en la comunicación entre los módulos.
-![Sim_Div](jhohan/imágenes/Simulacion_div.png)
+-Division
+
+<img width="1918" height="1158" alt="SImulacion_div" src="https://github.com/user-attachments/assets/80aa723c-038b-47fb-b6ea-e18560dab39d" />
+-Suma-Resta
+<img width="1918" height="1157" alt="suma_simulacion" src="https://github.com/user-attachments/assets/56dfe426-c59c-443f-a57e-8c00ffacf061" />
+
 ---
 
 # Módulos principales
@@ -63,6 +68,7 @@ Este módulo se encarga de calcular la división entre dos datos de entrada y en
 Se realizaron diferentes pruebas para verificar que cada operación funcionara correctamente.
 
 En cada simulación se comparó el resultado obtenido con el resultado esperado para asegurar que el diseño respondiera de forma correcta antes de implementarlo.
+<img width="668" height="1064" alt="Prueba_calculadora" src="https://github.com/user-attachments/assets/ee00c631-e33b-4bfd-a23c-48353f0c670b" />
 
 ---
 
