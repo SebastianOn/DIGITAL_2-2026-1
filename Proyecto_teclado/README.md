@@ -1,5 +1,7 @@
 # PROYECTO TECLADO PARA CALCULADORA FISICA
 <img width="949" height="1961" alt="Diagrama de flujo teclado drawio" src="https://github.com/user-attachments/assets/0b8f51a1-964a-48eb-815a-8b6ed5821c98" />
+
+
 ## 2. Explicación paso a paso
 
 1. **Reset — estado seguro**
@@ -15,7 +17,7 @@
    Cada estado `RowN` dura exactamente un ciclo: activa su fila (`R0..R3` en one-hot), memoriza cuál fila quedó activa en `prev_row` y carga el contador de asentamiento `cnt = 5`. Inmediatamente salta a `READ`. La fila sigue activa dentro de `READ` porque la lógica de salida Moore usa `prev_row` para mantenerla.
 
 5. **Asentamiento de la fila**
-   En `READ`, la FSM descuenta `cnt` de 5 a 0: seis ciclos (~30 µs a 200 kHz) con la fila energizada antes de tomar cualquier decisión. Este tiempo deja que la señal se propague por las pistas y el conector del teclado (200 Ω máximos de contacto según el datasheet) y que las columnas reflejen un valor eléctrico estable.
+   En `READ`, la FSM descuenta `cnt` de 5 a 0: seis ciclos (~30 µs a 200 kHz) con la fila energizada antes de tomar cualquier decisión. Este tiempo deja que la señal se propague por las pistas y el conector del teclado, ademas que las columnas reflejen un valor eléctrico estable.
 
 6. **Decodificación combinacional**
    En paralelo, en cada flanco de subida, `data_tcl` evalúa el decodificador: mira qué fila está activa y qué columna llegó en alto, y produce `next_tecla` con el código de la intersección (ASCII: '1'…'9', '0', '*', '#', '/'; la tecla C da `0x13`; A y B no están mapeadas y caen al default 0). Si ninguna columna está activa, `next_tecla = 0`, que el resto del flujo interpreta como "no hay tecla".
