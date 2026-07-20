@@ -1,4 +1,6 @@
 # PROYECTO TECLADO PARA CALCULADORA FISICA
+<img width="949" height="1961" alt="Diagrama de flujo teclado drawio" src="https://github.com/user-attachments/assets/0b8f51a1-964a-48eb-815a-8b6ed5821c98" />
+
 | Parámetro | Valor | Tiempo | Función |
 | :--- | :--- | :--- | :--- |
 | cnt | 5 → 0 | ≈ 30 µs | Asentamiento por fila antes de decidir avanzar. |
