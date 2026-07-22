@@ -1,0 +1,18 @@
+# ============================================================
+# colorlight_i9.lpf - Constraints para Colorlight i9 (ECP5-45F)
+# ============================================================
+
+# Reloj de 25 MHz de la placa
+LOCATE COMP "clk_25mhz" SITE "P3";
+IOBUF PORT "clk_25mhz" IO_TYPE=LVCMOS33;
+FREQUENCY PORT "clk_25mhz" 25 MHZ;
+
+# LED de la placa (activo en bajo en la i9)
+LOCATE COMP "led_status" SITE "L2";
+IOBUF PORT "led_status" IO_TYPE=LVCMOS33;
+
+# Salida de datos hacia la matriz WS2812
+# L5 (pmodk) -- confirmado funcionando en hardware real (digitos sueltos y
+# ROM multi-cuadro completa, ver img/digit_*.hex / rtl/top_multiframe.v).
+LOCATE COMP "ws2812_din" SITE "L5";
+IOBUF PORT "ws2812_din" IO_TYPE=LVCMOS33 DRIVE=8;
