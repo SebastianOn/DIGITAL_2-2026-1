@@ -5,9 +5,6 @@ import os
 src_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Panel WS2812 8x8 (calculadora): un solo pin de datos.
-# D1 es parte de pmodf (D1 C1 C2 E3 E2 D2 B1 A3, board/colorlight_i5.py),
-# grupo que no usa ningun otro periferico -- pmodi ya lo ocupa el teclado
-# por completo (D18 G5 F5 E5 D17 D16 E6 F4).
 _ws2812_io = [
     ("ws2812", 0,
         Subsignal("dout", Pins("L5")),
@@ -26,9 +23,6 @@ class WS2812Panel(Module, AutoCSR):
         self._frame_sel = CSRStorage(FRAME_SEL_WIDTH,
             description="Indice de cuadro: 0-9=digito, 10=operador (blanco), 11=apagado")
 
-        # ws2812_timer.v trae por defecto los tiempos afinados para la
-        # Colorlight i9 standalone (25 MHz); aqui se recalculan los ciclos
-        # a partir del reloj 'sys' real del SoC para no romper el protocolo.
         def ns_cycles(ns):
             return max(1, round(sys_clk_freq * ns * 1e-9))
 
@@ -46,7 +40,6 @@ class WS2812Panel(Module, AutoCSR):
             i_rst_n     = ~ResetSignal("sys"),  # ws2812_matrix8x8 usa reset activo en bajo
             i_frame_sel = self._frame_sel.storage,
             o_dout      = pads.dout,
-            # o_frame_done sin conectar: el timing de permanencia de cada
             # digito lo maneja el firmware con my_busy_wait, no esta senal.
         )
 
