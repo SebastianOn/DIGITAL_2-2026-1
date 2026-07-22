@@ -7,13 +7,7 @@ src_dir = os.path.dirname(os.path.abspath(__file__))
 # Teclado matricial 4x4: R0-R3 filas (salidas), C0-C3 columnas (entradas).
 # Pull-down en las columnas porque quedan en 0 mientras ninguna fila activa
 # esta conectada a traves de una tecla presionada.
-#
-# El grupo de 8 pines fisicos (E5 F4 F5 E6 G5 D18 D16 D17) resulto tener
-# filas y columnas intercambiadas (y reordenadas) respecto al teclado real:
-# se determino empiricamente presionando teclas conocidas y viendo que
-# codigo devolvia keypad0_tecla. Filas reales (linea comun de 1/2/3,
-# 4/5/6, 7/8/9, */0/#//) -> G5 D16 D18 D17. Columnas reales (linea comun
-# de 1/4/7/*, 2/5/8/0, 3/6/9/#, columna sin decodificar) -> F4 E6 E5 F5.
+
 _keypad_io = [
     ("keypad", 0,
         Subsignal("r0", Pins("G5")),
